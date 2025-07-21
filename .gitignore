@@ -1,3 +1,4 @@
 /.chromium-debug/
 /.firefox-tmp/
 /.vscode/
+.gitignore
