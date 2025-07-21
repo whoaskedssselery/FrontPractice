@@ -7,9 +7,13 @@
 </head>
 <body>
 
+     <a href="#contacts">Контакты</a>
+
      <!-- Урок 3-->
-     <p>Lorem ipsum dolor, <i>sit amet consectetur adipisicing elit.</i> Saepe, iste quaerat. Distinctio mollitia corporis a eligendi velit nihil cum inventore fugit magnam commodi? <b>Quasi veniam provident, nostrum reprehenderit assumenda maxime.</b></p>
-     <!-- p - в данном случае просто блок с текстом, для которого можно применять разные атрибуты типа class и т.п, а b  ровно тоже самый блок с текстом, только шрифт Жирный, а i превращает текст в курсив -->
+     <p>Lorem <mark>ipsum dolor</mark>, <i>sit amet consectetur adipisicing elit.</i> Saepe, <s>iste quaerat. Distinctio mollitia corporis a eligendi velit <br/> nihil cum</s> <u>inventore fugit magnam commodi?</u> <b>Quasi veniam provident, nostrum reprehenderit assumenda maxime.</b></p>
+     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus necessitatibus, distinctio quibusdam consectetur eveniet modi vero, placeat atque autem ducimus ut, obcaecati laborum delectus sunt cupiditate illum praesentium dolorem dolorum?</p>
+
+     <!-- p - в данном случае просто блок с текстом, для которого можно применять разные атрибуты типа class и т.п, а b  ровно тоже самый блок с текстом, только шрифт Жирный, а i превращает текст в курсив. Также стоит добавить информацию про тег s для зачеркнутого текста, тег strong -  аналон b, но скрин ридер будет считать информацию важной. Точно также и em придает больший смысл для курсива, нежели i. Тег u в свою очередь подчеркивает определенную часть текста. Тег mark выделяет обозначенную вами часть текста цветом. Тег br  указывается в том месте, где нужно выполнить перенос строки -->
 
      <!-- Урок 4 -->
      <h1>Заголовок 1 уровня</h1>
@@ -31,5 +35,36 @@
           <li>Я элемент нумированного списока</li>
      </ol>
 
+     <!-- Урок 5 -->
+     <p>Первое предложение</p>
+     <p>Второе предложение</p>
+     <hr/>
+     <p>Заключительное предложение</p>
+
+     <!-- Тег hr  создает горизонтальную черту, которая позволяет отделить нужную часть информации от другой -->
+
+     <p> Привет! Я создал этот текст для того, чтобы показать как выглядить предложение <q>Привет, Мир!</q> на языке кода: <strong><code>print("Hello, World!")</code></strong></p>
+
+     <!-- Тег code используется для того, чтобы продемонстрировать частичку кода в твоем тексте -->
+
+     <!-- Урок 6 -->
+
+     <h1 id="contacts">
+          <a href="mailto:ssselery@gmail.com">Написать нам<a>
+     </h1>
+
+     <!-- В самом начале я сделал ссылку на id заголовка контактов с символом #, теперь при нажатии на данную ссылку меня автоматически будет перебрасывать на ту часть страницы, где лежит блок с id = contacts. это называется  Якорная Ссылка  -->
+
+     <!-- Также я добавил в атрибут href  ссылку на свою почту, добавляя возможность написать письмо мне через mailto:example@gmail.com -->
+
+     <a href="/some-file.zip" download=""></a>
+
+     <!-- Также через тег a можно добавить возможность скачивать что-то на вашем сайте, важно добавить атрибут download  -->
+
+     <a href="tel:+79775200671">Связаться со мной</a>
+
+     <!-- Ты также можешь добавить возможность связаться с тобой по указанному телефону, если в ссылке добавишь  tel: и после двоеточия укажешь нужный номер телефона -->
+
+     <a href="https://t.me/schmunkem">Telegram</a>
 </body>
 </html>
