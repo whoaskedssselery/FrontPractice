@@ -124,7 +124,7 @@
 -->
 
 
-<img src="assets/img/nth.jpg" alt="Тут не должно быть изображения, т.к мне лень вставлять картинку" width="250" height="250" loading="lazy">
+<img src="assets/img/LovelyVSCode.jpg" alt="Тут будет какое-то аниме изображение" width="100%" height="500" loading="lazy">
 
 
 <!--
@@ -143,10 +143,42 @@
 ===========================================
 Урок 9: Медиаконтент
 ===========================================
+
+- Тег <video> нужен для того, чтобы вставить видео на твой сайт, также стоит добавить к нему атрибут controls, чтобы пользователь мог хотя бы минимально управлять настройками видео.
+- Если видео есть сразу в нескольких форматах, то можно не указывать src для видео, а добавить несколько source с указанием src до этого видео в определенном формате, а также указав на формат с помощью type. В таком случае браузер будет воспроизводить первый вариант, который он сможет воспроизвести. На случай, если он не сможет отобразить ни один из данных видео, вы можете оставить текст, который будет вопроизведен.
+- Если разработчику нужно, чтобы видео вопроизводилось при открытии сайта, то в <video> можно прописать атрибуты autoplay и muted. Muted является обязательным атрибутом, если хочешь использовать autoplay., иначе браузер просто не даст возможность запустить видео.
+- Атрибут loop используется для того, чтобы зациклить видео сразу после его завершения.
+- Атрибут постер дает возможность поставить обложку на видео.
+- Тег <audio> позволяет воспроизводить звуки в браузере и имеет почти все те же атрибуты, что и <video>.
+- Тег <iframe> позволяет вставить почти любой медиаконтент к вам на страничку, в качестве примера тут - яндекс карты с меткой, указывающей на мой дом и видео, которое помогает мне в изучении данного языка разметки.
+
 -->
 
+<video src="assets/video/example.mp4"
+controls
+autoplay
+muted
+loop
+poster = "assets/img/LovelyVSCode.jpg"
+>
+</video>
+<video>
+    <source src="video/example.mp4" type="video/mp4">
+    <source src="video/example.webm" type="video/webm">
+    <p>К сожалению, ваш браузер не поддерживает видео</p>
+</video>
 
+<audio src="#" controls></audio>
 
+<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Abb1c42c981e097a45542ce80bc493f1acc5bda702c80460d810afb1ffceabecf&amp;source=constructor" width="505" height="356" frameborder="0"></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6PL2TqBdz0I?si=Lfk287d7lVSkZOq5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<!--
+===========================================
+Урок 10: Таблицы
+===========================================
+-->
 
 </body>
 </html>
