@@ -244,6 +244,124 @@ iframe:
     </tfoot>
 </table>
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои заметки по HTML</title>
+</head>
+<body>
+
+<!--
+===========================================
+Урок 11: Формы и их структура
+===========================================
+
+Основные теги:
+- <form> - контейнер для элементов формы
+- <fieldset> - группа связанных элементов
+- <legend> - заголовок для fieldset
+- <label> - метка для элемента формы
+
+Ключевые атрибуты:
+- action - URL для отправки данных
+- method - GET/POST метод отправки
+- for - связь label с элементом (через id)
+- name - имя поля для сервера
+-->
+<h2>Урок 11: Формы</h2>
+
+<form action="/submit" method="post">
+    <fieldset>
+        <legend>Личная информация</legend>
+        <label for="username">Имя:</label>
+        <input type="text" id="username" name="username">
+    </fieldset>
+</form>
+
+<!--
+===========================================
+Урок 12: Элементы input и их типы
+===========================================
+
+Основные типы input:
+- text - обычный текст
+- email - валидация email
+- password - скрытый ввод
+- number - только числа
+- file - загрузка файлов
+- checkbox - флажки
+- radio - переключатели
+- range - ползунок
+- color - выбор цвета
+- date - выбор даты
+
+Дополнительные атрибуты:
+- required - обязательное поле
+- placeholder - подсказка
+- value - значение по умолчанию
+- checked - предвыбранный вариант
+-->
+<h2>Урок 12: Элементы input</h2>
+
+<form>
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </p>
+
+    <p>
+        <label for="age">Возраст:</label>
+        <input type="number" id="age" name="age" min="18" max="99">
+    </p>
+
+    <p>
+        <input type="checkbox" id="agree" name="agree" checked>
+        <label for="agree">Я согласен</label>
+    </p>
+</form>
+
+<!--
+===========================================
+Урок 13: Textarea и Select
+===========================================
+
+Textarea:
+- Многострочное текстовое поле
+- Атрибуты:
+  * rows - высота в строках
+  * cols - ширина в символах
+  * resize - управление изменением размера (CSS)
+
+Select:
+- Выпадающий список
+- <option> - элементы списка
+- <optgroup> - группы элементов
+- Атрибуты:
+  * multiple - множественный выбор
+  * size - количество видимых строк
+-->
+<h2>Урок 13: Textarea и Select</h2>
+
+<form>
+    <p>
+        <label for="message">Сообщение:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+    </p>
+
+    <p>
+        <label for="city">Город:</label>
+        <select id="city" name="city">
+            <optgroup label="Центр">
+                <option value="moscow">Москва</option>
+                <option value="spb">Санкт-Петербург</option>
+            </optgroup>
+            <option value="other">Другой</option>
+        </select>
+    </p>
+</form>
+
 <h2 id="contacts">Контакты</h2>
 <p>Свяжитесь с нами!</p>
 
