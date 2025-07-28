@@ -365,14 +365,61 @@ Select:
 
 <!--
 ===========================================
-Урок 14: Атрибуты
+Урок 14: Важные атрибуты форм
 ===========================================
 
+Основные атрибуты:
+1. Валидация:
+   - required - обязательное поле
+   - pattern - регулярное выражение
+   - min/max - минимальное/максимальное значение
+   - minlength/maxlength - длина текста
 
+2. Поведение:
+   - disabled - отключенное поле
+   - readonly - только для чтения
+   - autofocus - автофокус при загрузке
+   - autocomplete - автозаполнение
 
+3. Специфичные:
+   - placeholder - текст-подсказка
+   - inputmode - тип клавиатуры на мобильных
+   - spellcheck - проверка орфографии
+   - novalidate - отключение валидации формы
 -->
+<h2>Урок 14: Атрибуты форм</h2>
 
+<form>
+    <p>
+        <label for="login">Логин (3-12 символов):</label>
+        <input type="text" id="login" name="login"
+               placeholder="Введите логин"
+               minlength="3"
+               maxlength="12"
+               required>
+    </p>
 
+    <p>
+        <label for="name">Имя (только буквы):</label>
+        <input type="text" id="name" name="name"
+               pattern="[A-Za-zА-Яа-яЁё]+"
+               spellcheck="false">
+    </p>
+
+    <p>
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone"
+               inputmode="tel"
+               autocomplete="tel">
+    </p>
+
+    <p>
+        <input type="checkbox" id="agreement" name="agreement" disabled>
+        <label for="agreement">Соглашение (недоступно)</label>
+    </p>
+
+    <button type="submit" autofocus>Отправить</button>
+</form>
 
 
 <!--
