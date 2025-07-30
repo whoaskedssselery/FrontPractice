@@ -1,0 +1,97 @@
+/* Урок 1: Введение */
+header {
+    color: deepskyblue; /* Наследуется дочерними элементами */
+}
+
+ul {
+    color: purple; /* Переопределяет наследование от header */
+}
+
+/* Урок 2: CSS-Селекторы */
+
+/* Селектор по тегу */
+section {
+    background-color: goldenrod;
+    padding: 1rem; /* Добавлено для лучшего отображения */
+    margin-bottom: 1rem; /* Добавлено для разделения секций */
+}
+
+/* Селектор по классу (рекомендуемый способ) */
+.user-warning {
+    color: darkred;
+    font-size: 1.5rem; /* Использование rem вместо px для адаптивности */
+    font-weight: 700;
+}
+
+/* Селектор по id (не рекомендуется для стилей) */
+#id-selector {
+    font-size: 1.5rem;
+    color: blue;
+    display: block; /* Добавлено для лучшего отображения */
+    margin-top: 0.5rem;
+}
+
+/* Селектор по атрибуту */
+[type="checkbox"] {
+    height: 1.5rem;
+    width: 1.5rem;
+    vertical-align: middle; /* Добавлено для выравнивания с текстом */
+}
+
+/* Селектор потомков */
+section p {
+    color: green;
+}
+
+section p span {
+    color: blue;
+    font-weight: bold; /* Добавлено для наглядности */
+}
+
+/* Группировка селекторов */
+h1,
+h2,
+h3 {
+    color: teal;
+    margin: 1rem 0; /* Добавлено для единообразия */
+}
+
+/* Множественные классы */
+.button {
+    background-color: lightgray;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.button.is-active {
+    background-color: coral;
+}
+
+/* Соседний селектор (+) */
+.error-message {
+    color: red;
+    visibility: hidden;
+    margin-top: 0.5rem;
+}
+
+.input.is-invalid + .error-message {
+    visibility: visible;
+}
+
+/* Общий селектор соседей (~) */
+.using-after {
+    color: black;
+}
+
+.using-after ~ .parag {
+    color: aquamarine;
+    font-style: italic; /* Добавлено для наглядности */
+}
+
+/* Дополнительные улучшения */
+input {
+    display: block;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}

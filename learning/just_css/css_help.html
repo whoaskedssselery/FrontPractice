@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS Learning</title>
+    <style>
+        /* Встроенные стили (второй по приоритету способ подключения) */
+        p {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    ===========================================
+    Урок 1: Введение в CSS
+    ===========================================
+
+    Способы подключения CSS:
+    1. Инлайновые стили (атрибут style) - наивысший приоритет
+    2. Встроенные стили (тег <style> в head)
+    3. Внешние стили (отдельный .css файл) - рекомендуемый способ
+
+    Приоритетность стилей (от низшего к высшему):
+    1. Браузерные стили (user agent stylesheet)
+    2. Пользовательские стили (браузерные расширения)
+    3. Авторские стили (стили разработчика)
+    4. Стили во время анимации (animation)
+    5. Авторские с !important
+    6. Пользовательские с !important
+    7. Стили во время переходов (transition)
+
+    Наследование:
+    Дочерние элементы наследуют некоторые стили родителя
+    (например, color, font-family, line-height)
+    -->
+
+    <p style="color: red; text-decoration: overline;">
+        Параграф с красным текстом (инлайновые стили переопределяют встроенные)
+    </p>
+
+    <p style="color: green; font-weight: 700;">
+        Параграф с зеленым жирным текстом
+    </p>
+
+    <header>
+        <nav>
+            <ul>
+                <li>Пункт 1 (наследует цвет от header)</li>
+                <li>Пункт 2 (наследует цвет от header)</li>
+                <li>Пункт 3 (наследует цвет от header)</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--
+    ===========================================
+    Урок 2: CSS-селекторы
+    ===========================================
+
+    Основные типы селекторов:
+    1. По тегу: `tag { }`
+    2. По классу: `.class { }` (рекомендуемый способ)
+    3. По id: `#id { }` (не рекомендуется для стилей)
+    4. По атрибуту: `[attr="value"] { }`
+
+    Комбинаторы:
+    1. Потомки: `parent child { }`
+    2. Дочерние: `parent > child { }`
+    3. Соседние: `element + sibling { }`
+    4. Общие соседи: `element ~ siblings { }`
+    -->
+
+    <section>
+        <h2 id="test">Тестовая секция</h2>
+        <p class="user-warning">Читать только, если прошел все части Mario Kart</p>
+        <form>
+            <input type="checkbox" name="user-test" id="warning-test">
+            <label for="warning-test" id="id-selector">Поставь галочку, если прочитал текст выше</label>
+        </form>
+    </section>
+
+    <section>
+        <p>
+            Текст внутри секции
+            <span>и внутри span (стиль через селектор потомков)</span>
+        </p>
+    </section>
+
+    <h1>Заголовок 1 уровня</h1>
+    <h2>Заголовок 2 уровня</h2>
+    <h3>Заголовок 3 уровня</h3>
+
+    <form>
+        <button class="button">Открыть меню</button>
+        <button class="button is-active">Закрыть меню</button>
+    </form>
+
+    <form>
+        <label for="user-message">Введите сообщение</label>
+        <input class="input is-invalid" id="user-message">
+        <div class="error-message">
+            Введенные вами данные некорректны! (отображается через соседний селектор +)
+        </div>
+    </form>
+
+    <p class="parag">Параграф</p>
+    <p class="parag">Параграф</p>
+    <h2 class="using-after">Элемент, после которого меняются стили (через ~)</h2>
+    <p class="parag">Параграф (измененный стиль)</p>
+    <p class="parag">Параграф (измененный стиль)</p>
+</body>
+</html>
