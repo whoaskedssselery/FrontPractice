@@ -80,8 +80,8 @@ h3 {
 
 .block-obj {
     /* display: block; Для div значение block используется по умолчанию */
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 200px;
     margin: 20px; /* margin - отступ со всех сторон вне элемента*/
     padding: 30px; /* padding - отступ со всех сторон внутри элемента */
     border: 5px solid red;
@@ -99,7 +99,7 @@ h3 {
     margin: 30px;
     padding: 5px;
     width: 100px;
-    height: 100px;
+    height: 150px;
     border: 5px solid darkgreen;
 }
 
