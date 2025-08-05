@@ -208,5 +208,87 @@
 
     -->
 
+    <!--
+    ===========================================
+    Урок 6: Шрифты в CSS
+    ===========================================
+
+    Все форматы шрифтов:
+    - eot,svg,ttf,woff - старые форматы шрифтов
+     - woff2 - новый формат шрифтов
+
+     Применение:
+     - нужно использовать свойство font-family в стилях(наследуется)
+
+     Всего 3 способа использования:
+    1. Через @font-face (экономия трафика) - лучший вариант
+    2. Через @import с указанием url
+    3. Через link
+
+    transfonter.org - сервис для конвертации шрифтов в нужный формат
+
+    Свойство line-height:
+    - Задает межстрочный интервал
+
+    -->
+
+    <section class="example">
+        <header class="list-head">Типы шрифтов</header>
+        <div class="font-list">
+            <p style="font-weight: 100;">Thin 100</p>
+            <p style="font-weight: 200;">Extralight 200</p>
+            <p style="font-weight: 300;">Light 300</p>
+            <p style="font-weight: 400;">Regular 400</p>
+            <p style="font-weight: 500;">Medium 500</p>
+            <p style="font-weight: 600;">SemiBold 600</p>
+            <p style="font-weight: 700;">Bold 700</p>
+            <p style="font-weight: 800;">ExtraBold 800</p>
+            <p style="font-weight: 900;">Black 900</p>
+        </div>
+    </section>
+
+    <section class="example">
+        <div class="font-list">
+            <p>Я стандартный шрифт</p>
+            <p class="font-black">Я Roboto шрифт в black начертании</p>
+        </div>
+    </section>
+
+    <section class="example">
+        <header class="list-head">Преобразовать шрифт в нужный формат</header>
+        <a href="https://transfonter.org/" class="transfer-link" target="_blank">Нажми сюда!</a>
+    </section>
+
+    <!--
+    ===========================================
+    Урок 7: Цвета в CSS
+    ===========================================
+
+    Существует несколько форматов, при помощи которых задают цвета. Рассмотрим основные:
+    - color: white -> цвет задается через латинское наименование/некий цифровой индекс
+    - color: rgb(255 255 255) -> цвет задается через rgb формат при помощи чисел
+    - color: #fff -> цвет задается через по тому же принципу, что и rgb, но только через цифро-буквенные комбинации
+
+    Важно:
+    - Существует color: transparent; . Используют, чтобы сделать элемент прозрачным
+    - Если указать для какого-либо объекта color, то при редактировании элемента дальше можно не дублировать этот же цвет, а использовать currentColor.
+
+
+    -->
+
+    <section class="example new-style">
+        <header class="list-head">Цвета в CSS </header>
+        <div class="color-box">
+            <p style="color: red;">Я - красный текст </p>
+        </div>
+        <section class="example common">
+            <div class="color-box" style="line-height: 0.8;">
+                <p style="color: rgb(255 255 255);">Белый (255;255;255)</p>
+                <p style="color: rgb(0 0 255);">Синий (0;0;255)</p>
+                <p style="color: rgb(255 0 0);">Красный (255;0;0)</p>
+            </div>
+        </section>
+    </section>
+
 </body>
 </html>

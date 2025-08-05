@@ -1,3 +1,10 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
 /* Урок 1: Введение */
 header {
     color: deepskyblue; /* Наследуется дочерними элементами */
@@ -127,10 +134,54 @@ h3 {
 }
 
 .rule-breaking-block {
-    width: 100px;
-    height: 100px;
+    width: 170px;
     padding-inline: 0px;
     margin: -90px 0 0 40px;
     border: 5px solid;
     background-color: yellowgreen;
+}
+
+.example {
+    margin-top: 30px;
+    padding-bottom: 10px;
+    display: inline-block;
+    background-color: white;
+    border: 5px red solid;
+}
+
+.list-head {
+    padding: 10px 10px;
+    color: black;
+    font-weight: 700;
+}
+
+.example p {
+    color: black     ;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../assets/fonts/Roboto-Black.woff2) format(woff2);
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+.font-black {
+    font-family: 'Roboto';
+    font-weight: 900;
+}
+
+.transfer-link {
+    text-decoration: none;
+}
+
+.new-style {
+    padding-inline: 15px;
+    border-color: darkmagenta;
+}
+
+.common {
+    border-color: black;
+    background-color: black;
 }
