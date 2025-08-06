@@ -261,7 +261,7 @@
 
     <!--
     ===========================================
-    Урок 7: Цвета в CSS
+    Урок 7: Цвета в CSS #1`
     ===========================================
 
     Существует несколько форматов, при помощи которых задают цвета. Рассмотрим основные:
@@ -289,6 +289,53 @@
             </div>
         </section>
     </section>
+
+    <!--
+    ===========================================
+    Урок 8: Цвета в CSS #2
+    ===========================================
+
+    Свойтсво:
+    - background:
+    Позволяет использовать сразу несколько свойств внутри себя (-color,-image,-repeat,-position,-size,-attachment,-clip)
+
+    Градиенты:
+    - Задаются фоном к элементу при помощи background-image: linear-gradient(indianred,cornflowerblue);
+    - Всего есть 3 типа градиентов в css: linear,radial,conic, а также свойство repeating для их повторения и deg/turn для определения градуса градиента(прописывается в самом начале перед перечислением цветов)
+
+    Важно:
+    - Можно прописать порог вхождение и выхода каждого цвета в градиенте, дописав значение(я) в процентах после каждого цвета. Если процент входа и выхода двух соседних элементов соовпадет, то плавный переход превратится в статичный.
+
+    -->
+
+    <section class="example">
+        <header class="list-head">Градиенты</header>
+        <div class="grad-boxes">
+            <div class="box-1"></div>
+            <div class="box-2"></div>
+            <div class="box-3"></div>
+        </div>
+    </section>
+
+    <section class="example new-style">
+        <header class="list-head">Управление точками перехода</header>
+        <div class="box-example"></div>
+    </section>
+
+    <section class="example">
+        <header class="list-head">Ссылка на генератор градиентов</header>
+        <a href="https://cssgradient.io" target="_blank" style="text-decoration: none; background-image: linear-gradient(90grad, red, orange,yellow); color: black;">Кликни сюда!</a>
+    </section>
+
+
+    <!--
+    ===========================================
+    Урок 9: Рамки, обводки, тени, фильтры в CSS
+    ===========================================
+
+    
+
+    -->
 
 </body>
 </html>
