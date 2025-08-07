@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="learning.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>CSS Learning</title>
+    <style>
+        /* Встроенные стили (второй по приоритету способ подключения) */
+        p {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    ===========================================
+    Урок 1: Введение в CSS
+    ===========================================
+
+    Способы подключения CSS:
+    1. Инлайновые стили (атрибут style) - наивысший приоритет
+    2. Встроенные стили (тег <style> в head)
+    3. Внешние стили (отдельный .css файл) - рекомендуемый способ
+
+    Приоритетность стилей (от низшего к высшему):
+    1. Браузерные стили (user agent stylesheet)
+    2. Пользовательские стили (браузерные расширения)
+    3. Авторские стили (стили разработчика)
+    4. Стили во время анимации (animation)
+    5. Авторские с !important
+    6. Пользовательские с !important
+    7. Стили во время переходов (transition)
+
+    Наследование:
+    Дочерние элементы наследуют некоторые стили родителя
+    (например, color, font-family, line-height)
+    -->
+
+    <p style="color: red; text-decoration: overline;">
+        Параграф с красным текстом (инлайновые стили переопределяют встроенные)
+    </p>
+
+    <p style="color: green; font-weight: 700;">
+        Параграф с зеленым жирным текстом
+    </p>
+
+    <header>
+        <nav>
+            <ul>
+                <li>Пункт 1 (наследует цвет от header)</li>
+                <li>Пункт 2 (наследует цвет от header)</li>
+                <li>Пункт 3 (наследует цвет от header)</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--
+    ===========================================
+    Урок 2: CSS-селекторы
+    ===========================================
+
+    Основные типы селекторов:
+    1. По тегу: `tag { }`
+    2. По классу: `.class { }` (рекомендуемый способ)
+    3. По id: `#id { }` (не рекомендуется для стилей)
+    4. По атрибуту: `[attr="value"] { }`
+
+    Комбинаторы:
+    1. Потомки: `parent child { }`
+    2. Дочерние: `parent > child { }`
+    3. Соседние: `element + sibling { }`
+    4. Общие соседи: `element ~ siblings { }`
+    -->
+
+    <section>
+        <h2 id="test">Тестовая секция</h2>
+        <p class="user-warning">Читать только, если прошел все части Mario Kart</p>
+        <form>
+            <input type="checkbox" name="user-test" id="warning-test">
+            <label for="warning-test" id="id-selector">Поставь галочку, если прочитал текст выше</label>
+        </form>
+    </section>
+
+    <section>
+        <p>
+            Текст внутри секции
+            <span>и внутри span (стиль через селектор потомков)</span>
+        </p>
+    </section>
+
+    <h1>Заголовок 1 уровня</h1>
+    <h2>Заголовок 2 уровня</h2>
+    <h3>Заголовок 3 уровня</h3>
+
+    <form>
+        <button class="button">Открыть меню</button>
+        <button class="button is-active">Закрыть меню</button>
+    </form>
+
+    <form>
+        <label for="user-message">Введите сообщение</label>
+        <input class="input is-invalid" id="user-message">
+        <div class="error-message">
+            Введенные вами данные некорректны! (отображается через соседний селектор +)
+        </div>
+    </form>
+
+    <p class="parag">Параграф</p>
+    <p class="parag">Параграф</p>
+    <h2 class="using-after">Элемент, после которого меняются стили (через ~)</h2>
+    <p class="parag">Параграф (измененный стиль)</p>
+    <p class="parag">Параграф (измененный стиль)</p>
+
+    <!--
+    ===========================================
+    Урок 3:  Блочная модель в CSS
+    ===========================================
+
+    Свойство:
+    -display
+    Значения:
+
+    1.Block
+    1.1 Занимает всю ширину родителя.
+    1.2 Можно задавать width, height, margin, padding.
+    1.3 Используется для div по умолчанию.
+
+    2. Inline
+    2.1 Занимает ровно столько места, сколько нужно контенту внутри.
+    2.2 Нельзя задавать width, height, margin-top/bottom.
+
+    3. Inline-block
+    3.1 Ведет себя как inline
+    3.2 Но можно задавать width, height, margin, padding.
+
+    4. None
+    4.1 Позволяет полностью скрыть элемент со страницы
+    4.2 Элемент все еще доступен для разметки
+
+    Свойство: padding
+    - padding: 15px -> отступы внутри по 15 пикселей с каждой стороны
+    - padding: 15px 40px -> отступы внутри: 15px сверху и снизу, 40px справа и слева
+
+    Свойство: border
+    - border: 5px solid red -> указывать: ширина + тип линии + цвет(черный по умолчанию) в любом порядке
+
+    Свойство: box-sizing
+    - content-box -> width и height задаются только для контента, border и padding добавляются снаружи
+    - border-box -> width и height включают в себя border и padding, размер элемента остается фиксированным.
+
+
+    Важно:
+    Итоговые width и height считаются с учетом padding, border и других свойств. Margin не прибавляется!
+    -->
+
+    <div class="block-obj">Я - блок(блочный элемент)</div>
+
+    <span class="inline-obj">А я - строчный элемент</span>
+
+    <span class="inline-block-obj">А я - строчно-блочный элемент</span>
+
+    <div class="none-obj">А я - неотображаемый элемент</div>
+
+    <div class="test-block">Padding: 15px 40px</div>
+
+    <div class="common-box">Я просто блок</div>
+
+    <div class="common-box normal-size">А я блок с фиксированным размерами</div>
+
+    <div class="rule-breaking-block">А я нарушаю правила</div>
+
+    <!--
+    ===========================================
+    Урок 4: Внутренние и внешние отступы в CSS
+    ===========================================
+
+    Свойство: padding
+    - Одно значение -> применяется на все стороны относительно объекта
+    - Два значения -> верх и низ + право и лево
+    - Три значения -> верх + право и лево + низ
+    - Четрые значения -> верх + право + низ + лево
+
+    - Уpadding также существует несколько версий для добавления отступов в отдельной стороне:
+    -top,-right,-botttom,-left -> для каждой стороны
+    -block, -inline -> по вертикали и горизонтали соответственно
+
+
+    Свойство: margin
+    Значения регулируются аналогично padding.
+
+    Обратить внимание:
+    -Возможно установить значение margin: auto, в таком случае браузер сам решит, сколько нужно сделать отступы.
+    - Значение magin может быть отрицательно
+
+    Важно:
+    - При столкновении двух margin у разных элементов браузер выберет наибольший и применит его, например при столкновении двух элементов с отступами 50 и 100 друг от друга, расстояние между ними будет 100.
+
+    -->
+
+    <!--
+    ===========================================
+    Урок 5: Обнуляющие стили CSS
+    ===========================================
+
+    Normalize CSS/ Reset CSS использовать для стандартизации стилей под все браузеры.
+
+    -->
+
+    <!--
+    ===========================================
+    Урок 6: Шрифты в CSS
+    ===========================================
+
+    Все форматы шрифтов:
+    - eot,svg,ttf,woff - старые форматы шрифтов
+     - woff2 - новый формат шрифтов
+
+     Применение:
+     - нужно использовать свойство font-family в стилях(наследуется)
+
+     Всего 3 способа использования:
+    1. Через @font-face (экономия трафика) - лучший вариант
+    2. Через @import с указанием url
+    3. Через link
+
+    transfonter.org - сервис для конвертации шрифтов в нужный формат
+
+    Свойство line-height:
+    - Задает межстрочный интервал
+
+    -->
+
+    <section class="example">
+        <header class="list-head">Типы шрифтов</header>
+        <div class="font-list">
+            <p style="font-weight: 100;">Thin 100</p>
+            <p style="font-weight: 200;">Extralight 200</p>
+            <p style="font-weight: 300;">Light 300</p>
+            <p style="font-weight: 400;">Regular 400</p>
+            <p style="font-weight: 500;">Medium 500</p>
+            <p style="font-weight: 600;">SemiBold 600</p>
+            <p style="font-weight: 700;">Bold 700</p>
+            <p style="font-weight: 800;">ExtraBold 800</p>
+            <p style="font-weight: 900;">Black 900</p>
+        </div>
+    </section>
+
+    <section class="example">
+        <div class="font-list">
+            <p>Я стандартный шрифт</p>
+            <p class="font-black">Я Roboto шрифт в black начертании</p>
+        </div>
+    </section>
+
+    <section class="example">
+        <header class="list-head">Преобразовать шрифт в нужный формат</header>
+        <a href="https://transfonter.org/" class="transfer-link" target="_blank">Нажми сюда!</a>
+    </section>
+
+    <!--
+    ===========================================
+    Урок 7: Цвета в CSS #1`
+    ===========================================
+
+    Существует несколько форматов, при помощи которых задают цвета. Рассмотрим основные:
+    - color: white -> цвет задается через латинское наименование/некий цифровой индекс
+    - color: rgb(255 255 255) -> цвет задается через rgb формат при помощи чисел
+    - color: #fff -> цвет задается через по тому же принципу, что и rgb, но только через цифро-буквенные комбинации
+
+    Важно:
+    - Существует color: transparent; . Используют, чтобы сделать элемент прозрачным
+    - Если указать для какого-либо объекта color, то при редактировании элемента дальше можно не дублировать этот же цвет, а использовать currentColor.
+
+
+    -->
+
+    <section class="example new-style">
+        <header class="list-head">Цвета в CSS </header>
+        <div class="color-box">
+            <p style="color: red;">Я - красный текст </p>
+        </div>
+        <section class="example common">
+            <div class="color-box" style="line-height: 0.8;">
+                <p style="color: rgb(255 255 255);">Белый (255;255;255)</p>
+                <p style="color: rgb(0 0 255);">Синий (0;0;255)</p>
+                <p style="color: rgb(255 0 0);">Красный (255;0;0)</p>
+            </div>
+        </section>
+    </section>
+
+    <!--
+    ===========================================
+    Урок 8: Цвета в CSS #2
+    ===========================================
+
+    Свойтсво:
+    - background:
+    Позволяет использовать сразу несколько свойств внутри себя (-color,-image,-repeat,-position,-size,-attachment,-clip)
+
+    Градиенты:
+    - Задаются фоном к элементу при помощи background-image: linear-gradient(indianred,cornflowerblue);
+    - Всего есть 3 типа градиентов в css: linear,radial,conic, а также свойство repeating для их повторения и deg/turn для определения градуса градиента(прописывается в самом начале перед перечислением цветов)
+
+    Важно:
+    - Можно прописать порог вхождение и выхода каждого цвета в градиенте, дописав значение(я) в процентах после каждого цвета. Если процент входа и выхода двух соседних элементов соовпадет, то плавный переход превратится в статичный.
+
+    -->
+
+    <section class="example">
+        <header class="list-head">Градиенты</header>
+        <div class="grad-boxes">
+            <div class="box-1"></div>
+            <div class="box-2"></div>
+            <div class="box-3"></div>
+        </div>
+    </section>
+
+    <section class="example new-style">
+        <header class="list-head">Управление точками перехода</header>
+        <div class="box-example"></div>
+    </section>
+
+    <section class="example">
+        <header class="list-head">Ссылка на генератор градиентов</header>
+        <a href="https://cssgradient.io" target="_blank" style="text-decoration: none; background-image: linear-gradient(90grad, red, orange,yellow); color: black;">Кликни сюда!</a>
+    </section>
+
+
+    <!--
+    ===========================================
+    Урок 9: Рамки, обводки, тени, фильтры в CSS
+    ===========================================
+
+    Свойство:
+    -outline:
+    Задает обводку нужному элементу, при этом не добавляет элементу в размерах, в отличие от border
+    Работает по тому же принципу, что и border.
+
+    -border-radius:
+    Дает возможность сделать края элемента круглыми.
+
+    -box-shadow:
+    Задает тени для выбранных объектов. Изменяюются только четыре значения: первое - по горизонатли, второе - по вертикали, третье - радиус раззмытия, четвертое - радиус распространения(размеры). А также после данных значений можно указать цвет в любом его формате. Дополнительно можно использовать свойство inset после этого, оно меняет расположение теней с внешнего на внутреннее
+
+    -filter:
+    Добавляет возможность менять фильтры для картинок внутри сайта.
+    Можно указать drop-shadow(анвлог box-shadow), что позволит добавить тени для объекта формата .png
+
+    -->
+    <section class="example">
+        <header class="list-head">Границы</header>
+        <div class="box"></div>
+        <div class="box broken-outline"></div>
+    </section>
+
+    <section class="example">
+        <header class="list-head">Ссылка на генератор закруглений</header>
+        <a href="https://9elements.github.io/fancy-border-radius/" target="_blank" style="text-decoration: none; background-image: linear-gradient(67grad, blue,green,lightgreen); color: #fff">Кликни сюда!</a>
+    </section>
+
+        <section class="example">
+        <header class="list-head">Тени</header>
+        <div class="shadow box"></div>
+    </section>
+
+    <!--
+    ===========================================
+    Урок 10: Позиционирование в CSS
+    ===========================================
+    -->
+
+
+
+</body>
+</html>
