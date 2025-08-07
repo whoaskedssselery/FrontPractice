@@ -210,8 +210,31 @@ h3 {
     background-image: linear-gradient(
        darkmagenta 30%,
        skyblue 40% 60%,
-       cornflowerblue 70% 
+       cornflowerblue 70%
     );
     margin: 0 30px 30px 30px;
     border: 3px solid;
+}
+
+.box {
+    box-sizing: content-box;
+    padding-bottom: 0;
+    margin: 30px 10px;
+    width: 100px;
+    height: 100px;
+    background-color: lightgrey;
+    border: 6px solid deepskyblue;
+}
+
+.broken-outline {
+    outline: 7px dashed black;
+    border-style: none;
+    outline-offset: 20px;
+    border-radius: 12px;
+}
+
+.shadow {
+    background-color: lightcoral;
+    border-color: aquamarine;
+    box-shadow: 5px 7px 4px;
 }
