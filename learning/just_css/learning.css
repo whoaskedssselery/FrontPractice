@@ -271,14 +271,14 @@ dialog button {
     position: absolute;
     background-color: olivedrab;
     z-index: 100;
-    top: 100px;
-    left: 250px;
+    /* top: 100px;
+    left: 250px; */
 }
 
 .four {
     position: fixed;
     background-color: indianred;
-    top: 580px;
+    bottom: 0;
     left: 330px;
 }
 
@@ -287,4 +287,29 @@ dialog button {
     background-color: goldenrod;
     top: 0;
     left: 20px;
+}
+
+.elem-1 {
+    background-color: lightskyblue;
+    width: 50vw;
+    height: 100px;
+}
+
+.elem-2 {
+    background-color: lightpink;
+    font-size: 30px;
+    width: 15em;
+    height: 100px;
+}
+
+.elem-3 {
+    background-color: lightgreen;
+    width: 200px;
+    height: 100px;
+}
+
+.elem-4 {
+    background-color: lightsalmon;
+    width: 30mm;
+    height: 50px;
 }
