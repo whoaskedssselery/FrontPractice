@@ -220,8 +220,8 @@ h3 {
     box-sizing: content-box;
     padding-bottom: 0;
     margin: 30px 10px;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-color: lightgrey;
     border: 6px solid deepskyblue;
 }
@@ -237,4 +237,54 @@ h3 {
     background-color: lightcoral;
     border-color: aquamarine;
     box-shadow: 5px 7px 4px;
+}
+
+dialog {
+    position: relative;
+    margin:auto;
+    padding: 50px;
+}
+
+dialog::backdrop {
+    background-color: rgb(0, 0, 0 / 0.5);
+}
+
+dialog button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.one {
+    position: static;
+    background-color: cornflowerblue;
+}
+
+.two {
+    position: relative;
+    background-color: lightcoral;
+    top: 50px;
+    left: 100px;
+}
+
+.three {
+    position: absolute;
+    background-color: olivedrab;
+    z-index: 100;
+    top: 100px;
+    left: 250px;
+}
+
+.four {
+    position: fixed;
+    background-color: indianred;
+    top: 580px;
+    left: 330px;
+}
+
+.five {
+    position: sticky;
+    background-color: goldenrod;
+    top: 0;
+    left: 20px;
 }
