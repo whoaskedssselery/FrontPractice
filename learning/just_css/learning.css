@@ -85,6 +85,10 @@ h3 {
     color: aquamarine;
 }
 
+.some-box{
+    z-index: -1;
+}
+
 .block-obj {
     /* display: block; Для div значение block используется по умолчанию */
     width: 250px;
@@ -280,6 +284,7 @@ dialog button {
     background-color: indianred;
     bottom: 0;
     left: 330px;
+    z-index: -1;
 }
 
 .five {
@@ -312,4 +317,88 @@ dialog button {
     background-color: lightsalmon;
     width: 30mm;
     height: 50px;
+}
+
+.flex-container {
+    gap: 15px;
+    padding: 10px;
+    background-color: lightskyblue;
+    display: flex;
+}
+
+.flex-element {
+    height: 100px;
+    width: 100px;
+    background-color: lightgreen;
+    padding: 10px;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.new-elem {
+    width: 300px;
+    height: 300px;
+}
+
+.stylish {
+    width: 600px;
+    border: 12px solid lightcoral;
+}
+
+.elems-grow {
+    flex-grow: 1;
+}
+
+.elem-grow {
+    flex-grow: 1;
+}
+
+.elems-shrink {
+    flex-shrink: 0;
+}
+
+.elem-shrink {
+    flex-shrink: 2;
+}
+
+.test {
+    width: 300px;
+}
+
+.order-1 {order: 1 }
+.order-2 {order: 2}
+.order-3 {order: 3 }
+.order-last {order: 4 }
+
+.new-flex-container {
+    align-items: baseline;
+    padding: 10px;
+    background-color: lightblue;
+    display: flex;
+    gap: 10px;
+}
+
+.new-flex-element {
+    border: 4px solid;
+    width: 100px;
+    padding: 10px;
+    background-color: lightgreen;
+}
+
+.new-flex-element h1,h2,h3{
+    color: black;
 }

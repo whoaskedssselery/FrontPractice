@@ -475,5 +475,225 @@
         </div>
     </section>
 
+    <!--
+    ===========================================
+    Урок 12:  CSS FlexBox Layout
+    ===========================================
+
+    Flex-конетейнром считается любой элемент, к которому применено свойство display: flex. Это свойство наследуется
+
+    Изначально простой flex элемент будет вести себя так, словно он display:block. А если применить display:inline-flex, то элемент будет вести себя так, будто он строка
+
+    Свойство:
+    -flex-direction:
+    Позволяет менять напраление заполнения(изначально - слева направо 'row').
+
+    -flex-wrap:
+    Элементы в flex-контейнере по умолчанию пытаются поместиться в одну строку, даже если при их размерах это невозможно, из-за чего заданные пользователем размеры игнорируются. Чтобы избежать этого, нужно выставить значение flex-wrap на wrap
+    Существует также flex-wrap: wrap-reverse, что позволяет перевернуть список
+
+    -flex-flow:
+    Объединяет в себе flex-direction и flex-wrap, указывать через пробел
+
+    -flex-grow:
+    Позволяет растягивать элемент(ы) по всей ширине относительно соседних элементов, если для этого действия есть свободное пространство.
+    Работает даже при имеющихся значениях высоты и ширины.
+
+    -flex-basis:
+    Переопределяет размеры элемента по основоному направлению(row - горизонт, column - вертикаль)
+    Приоритетнее width,height и т.п
+
+    -flex:
+    Объединяет через пробел grow,shrink и basis
+
+    -order:
+    Позволяет определять порядок расстановки элемента в flex-контейнере
+
+    -justify-content:
+    Определяет положение элементов внутри flex-контейнера по основной оси
+
+    --flex-start:
+    Элементы прижимаются к старту контейнера
+
+    --flex-end:
+    Элементы прижимаются к концу контейнера
+
+    --center:
+    Элементы распологаются ровно в центре контейнера
+
+    --space-between:
+    Первый и последний элементы расположены строго по краям контейнера, остальные же выстраиваются с одинаковыми отступами на всем свободном пространстве
+
+    -align items:
+    Определяет положение элементов внутри flex-контейнера по побочной оси
+
+    --stretch:
+    Значение по умолчанию, элементы заполняют все свободное пространство flex-контейнера
+
+    --flex-start:
+    Элементы располагаются в самом начале их побочной оси  внутри flex-контейнера
+
+    --flex-end:
+    Элементы располагаются в конце их побочной оси  внутри flex-контейнера
+
+    --center:
+    Элементы располагаются в самом центре их побочной оси внутри flex-контейнера
+
+    --baseline:
+    Элементы будут выравнены по базовой линии текста
+
+    -align-content:
+    Определяет положение рядов в flex-контейнере, работает аналогично justify-content
+
+    -gap/row-gap/column-gap:
+    Позволяет задать отступы между элементами в flex-котейнере.
+
+    -->
+
+    <section class="example-flex">
+        <header class="list-head">display: flex</header>
+        <div class="flex-container">
+            <div class="flex-element">
+                Элемент 1
+            </div>
+            <div class="flex-element">
+                Элемент 2
+            </div>
+        </div>
+    </section>
+
+    <section class="example-flex">
+        <header class="list-head">display: flex + -flex-direction: row-reverse</header>
+        <div class="flex-container flex-row-reverse">
+            <div class="flex-element">
+                Элемент 1
+            </div>
+            <div class="flex-element">
+                Элемент 2
+            </div>
+        </div>
+    </section>
+
+    <section class="example-flex">
+        <header class="list-head">display: flex</header>
+        <div class="flex-container flex-column">
+            <div class="flex-element">
+                Элемент 1
+            </div>
+            <div class="flex-element">
+                Элемент 2
+            </div>
+        </div>
+    </section>
+
+    <section class="example-flex">
+        <header class="list-head">display: flex</header>
+        <div class="flex-container flex-column-reverse">
+            <div class="flex-element">
+                Элемент 1
+            </div>
+            <div class="flex-element">
+                Элемент 2
+            </div>
+        </div>
+    </section>
+
+
+
+    <div>
+        display: flex
+    </div>
+    <div class="flex-container">
+        <div class="flex-element new-elem">1</div>
+        <div class="flex-element new-elem">2</div>
+        <div class="flex-element new-elem">3</div>
+        <div class="flex-element new-elem">4</div>
+        <div class="flex-element new-elem">5</div>
+        <div class="flex-element new-elem">6</div>
+        <div class="flex-element new-elem">7</div>
+        <div class="flex-element new-elem">8</div>
+        <div class="flex-element new-elem">9</div>
+        <div class="flex-element new-elem">10</div>
+    </div>
+
+
+    <div>
+        display: flex + flex-wrap: wrap
+    </div>
+    <div class="flex-container flex-wrap">
+        <div class="flex-element new-elem">1</div>
+        <div class="flex-element new-elem">2</div>
+        <div class="flex-element new-elem">3</div>
+        <div class="flex-element new-elem">4</div>
+        <div class="flex-element new-elem">5</div>
+        <div class="flex-element new-elem">6</div>
+        <div class="flex-element new-elem">7</div>
+        <div class="flex-element new-elem">8</div>
+        <div class="flex-element new-elem">9</div>
+        <div class="flex-element new-elem">10</div>
+    </div>
+
+
+    <div>Flex-grow по умолчанию</div>
+    <div class="flex-container stylish">
+        <div class="flex-element">1</div>
+        <div class="flex-element">2</div>
+        <div class="flex-element">3</div>
+        <div class="flex-element">4</div>
+    </div>
+
+    <div>Flex-grow: 1; для всех элементов</div>
+    <div class="flex-container stylish">
+        <div class="flex-element elems-grow">1</div>
+        <div class="flex-element elems-grow">2</div>
+        <div class="flex-element elems-grow">3</div>
+        <div class="flex-element elems-grow">4</div>
+    </div>
+
+    <div>Flex-grow: 1; для одного элемента</div>
+    <div class="flex-container stylish">
+        <div class="flex-element elem-grow">1</div>
+        <div class="flex-element">2</div>
+        <div class="flex-element">3</div>
+        <div class="flex-element">4</div>
+    </div>
+
+    <div>Flex-shrink по умолчанию</div>
+    <div class="flex-container stylish test">
+        <div class="flex-element">1</div>
+        <div class="flex-element">2</div>
+        <div class="flex-element">3</div>
+        <div class="flex-element">4</div>
+    </div>
+
+    <div>Flex-shrink: 0; для всех элементов (не игнорируют свои реальные азмеры)</div>
+    <div class="flex-container stylish test">
+        <div class="flex-element elems-shrink">1</div>
+        <div class="flex-element elems-shrink">2</div>
+        <div class="flex-element elems-shrink">3</div>
+        <div class="flex-element elems-shrink">4</div>
+    </div>
+
+    <div>Flex-shrink: 2; для одного элемента + бонусный порядок элементов</div>
+    <div class="flex-container stylish test">
+        <div class="flex-element elem-shrink order-last">1</div>
+        <div class="flex-element order-2">2</div>
+        <div class="flex-element order-1">3</div>
+        <div class="flex-element order-3">4</div>
+    </div>
+
+    <div>align-items: baseline (Выравнивание по тексту)</div>
+    <div class="new-flex-container">
+        <div class="new-flex-element"><h1>Lorem ipsum dolor sit amet</h1>
+        </div>
+        <div class="new-flex-element"><h2>Lorem ipsum dolor sit amet</h2>
+        </div>
+        <div class="new-flex-element"><h3>Lorem ipsum dolor sit amet</h3>
+        </div>
+        <div class="new-flex-element"><h4>Lorem ipsum dolor sit amet</h4>
+        </div>
+    </div>
+
+
 </body>
 </html>
