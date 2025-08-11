@@ -575,7 +575,7 @@
     </section>
 
     <section class="example-flex">
-        <header class="list-head">display: flex</header>
+        <header class="list-head">display: flex + flex-direction: column</header>
         <div class="flex-container flex-column">
             <div class="flex-element">
                 Элемент 1
@@ -587,7 +587,7 @@
     </section>
 
     <section class="example-flex">
-        <header class="list-head">display: flex</header>
+        <header class="list-head">display: flex + flex-direction: column-reverse</header>
         <div class="flex-container flex-column-reverse">
             <div class="flex-element">
                 Элемент 1
@@ -683,6 +683,7 @@
     </div>
 
     <div>align-items: baseline (Выравнивание по тексту)</div>
+    <hr>
     <div class="new-flex-container">
         <div class="new-flex-element"><h1>Lorem ipsum dolor sit amet</h1>
         </div>
@@ -694,6 +695,108 @@
         </div>
     </div>
 
+    <!--
+    ===========================================
+    Урок 13: Псевдоэлементы в CSS
+    ===========================================
+
+    Псевдоэлементы позволяют добавлять к элементам доп контент, который нельзя добавить через html
+
+    -->
+
+     <section class="example">
+
+        <header class="list-head"> Псевдоэлементы</header>
+
+        <p class="with-before">
+            Элемент с псевдоэлементом::before
+        </p>
+
+        <p class="with-after">
+            Элемент с псевдоэлементом::after
+        </p>
+
+        <input type="text" class="with-red-placeholder" placeholder="Красный placeholder">
+
+        <input type="file" class="with-file-selector-button">
+
+        <p class="with-first-letter">
+            Элемент с псевдоэлементом::first-letter
+        </p>
+
+        <p class="with-first-line">
+            Элемент <br>
+            с псевдоэлементом <br>
+            ::first-line
+        </p>
+
+        <p class="with-selection">
+            Элемент с псевдоэлементом::selection
+        </p>
+
+        <ul>
+            <li>Элемент списка</li>
+            <li class="with-marker">Элемент списка с псевдоэлементом::marker</li>
+            <li>Элемент списка</li>
+        </ul>
+
+     </section>
+
+
+     <!--
+     ===========================================
+     Урок 14: Псевдоклассы в CSS
+     ===========================================
+
+    Псевдокласс :child :
+    -Позволяет обратиться к какому-либо дочернему элементу по его номеру или признаку (например по четности - :nth-child(odd/even))
+    Дополнительно:
+    nth-last-child обращается к элментами по порядку с самого конца
+    nth-child(?n) позволяет выбрать определенный порядок обращения к элементу (например к каждому 3 -> 3n)
+    nth-child(-n + ?) позволяет выбрать определенное кол-во элементов с самого начала, на которые можно будет воздействовать этим псевдоклассом
+    only-child обращается к элементу, если он является единственным дочерним
+
+    Псевдокласс :not :
+    Позволяет инвертировать действие другого псе
+
+    Псевдокласс disabled:
+    Деактивирует возможности input,button и т.п
+
+    Псевдокласс checked:
+    Работает только с input:radio/checkbox, позволяет изменять бокс с галочкой в определенном состоянии
+
+     -->
+     <section class="example">
+        <header class="list-head">Ссылка на кастомный nth-child</header>
+        <a href="https://nth-child.belter.io/" target="_blank" style="text-decoration: none;">Ссылка!</a>
+    </section>
+
+    <section class="example">
+        <header class="list-head">Псевдоклассы состояни</header>
+
+        <button class="hover-eff">
+            Hover состояние
+        </button>
+
+        <button class="focus-eff">
+            Focus состояние
+        </button>
+
+        <button class="focus-visible-eff">
+            Focus-visible состояние
+        </button>
+
+        <button class="active-eff">
+            Active состояние
+        </button>
+
+    </section>
+
+    <!--
+    ===========================================
+    Урок 15: CSS Grid Layout
+    ===========================================
+    -->
 
 </body>
 </html>

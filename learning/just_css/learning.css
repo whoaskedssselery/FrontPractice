@@ -402,3 +402,78 @@ dialog button {
 .new-flex-element h1,h2,h3{
     color: black;
 }
+
+hr {
+    position: relative;
+    bottom: -3rem;
+    border: red solid;
+    margin-bottom: -15px;
+}
+
+.with-before::before {
+    content: "(-:";
+    color: cornflowerblue;
+}
+
+.with-after::after {
+    content: ":-)";
+    color: crimson;
+}
+
+.with-red-placeholder {
+    color: red;
+}
+
+.with-file-selector-button::file-selector-button {
+    background-color: lightgreen;
+    font-weight: 700;
+    border: 2px solid;
+}
+
+.with-first-letter::first-letter {
+    font-size: 3rem
+}
+
+.with-first-line::first-line {
+    text-decoration: underline;
+}
+
+section li {
+    color: black;
+}
+
+.with-marker::marker {
+    color: yellow;
+}
+
+section button {
+    display: flex;
+    background-color: coral;
+    border-radius: 10px;
+    font-weight: 700;
+    margin: 20px 10px;
+    flex-wrap: wrap;
+    height: 100px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    border:  7px dashed;
+}
+
+.hover-eff:hover {
+    background-color: palevioletred;
+}
+
+.focus-eff:focus {
+    transform: scale(1.05);
+}
+
+.focus-visible-eff:focus-visible {
+    transform: scale(0.95);
+}
+
+.active-eff:active {
+    color: white;
+    background-color: #000;
+    transform:  scale(1.15);
+}
