@@ -477,3 +477,46 @@ section button {
     background-color: #000;
     transform:  scale(1.15);
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr repeat(2, 1fr);
+    gap: 10px;
+}
+
+.grid-elem {
+    background-color: lightgreen;
+    height: 6em;
+}
+
+.content {
+    display: grid;
+    min-height: 50vh;
+    grid-template-columns: 25% auto 15%;
+    grid-template-areas:
+    "menu catalog advertisement"
+    "menu catalog advertisement"
+    "menu catalog ."
+    "menu order order"
+    ;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: aqua;
+}
+
+.catalog {
+    grid-area: catalog;
+    background-color: cadetblue;
+}
+
+.advertisement {
+    grid-area: advertisement;
+    background-color: palevioletred;
+}
+
+.order {
+    grid-area: order;
+    background-color: lightgreen;
+}

@@ -796,7 +796,69 @@
     ===========================================
     Урок 15: CSS Grid Layout
     ===========================================
+
+    Грид-контейнер - элемент, в свойствах которого есть указание display: grid;
+    Грид-элементы - дочерки грид-конейнера
+
+    Свойства:
+
+    -grid-template-columns задает кол-во и размер грид-колонок для контейнера
+    --repeat() позволяет указать в скобках через запятую кол-во и размерность грид-колонок
+
+    -grid-auto-rows задает размеры для грид-строк, не имеющих свои собственные размеры от пользователя
+
+    -grid-template-areas позволяет явно указать шаблон грид-сетки
+
+    Дополнительно:
+    fr - единица измерения, указывающая "на сколько равных частей нужно поделить свободное от других грид-элементов пространство"
+    minmax() позволяет указать через запятую минимальный и максимальный размер для грид-элемента
+
+    -place-items - совмещает в себе align-items и justify-content через пробел
+
+
     -->
+
+    <section class="example new-style">
+        <header class="list-head">Grid Layout</header>
+        <div class="grid-container">
+            <div class="grid-elem">Lorem ipsum dolor sit amet</div>
+            <div class="grid-elem">Lorem ipsum dolor sit amet</div>
+            <div class="grid-elem">Lorem ipsum dolor sit amet</div>
+            <div class="grid-elem">Lorem ipsum dolor sit amet</div>
+            <div class="grid-elem">Lorem ipsum dolor sit amet</div>
+            <div class="grid-elem">Lorem ipsum dolor sit amet</div>
+        </div>
+    </section>
+
+    <main class="content">
+        <aside class="menu">
+            Боковое меню
+        </aside>
+
+        <section class="catalog">
+            Каталог
+        </section>
+
+        <section class="advertisement">
+            Реклама
+        </section>
+
+        <section class="order">
+            Ваш заказ
+        </section>
+    </main>
+
+    <!--
+    ===========================================
+    Урок 16: CSS переполнение overflow, видимость opacity и visibility, обрезка clip-path
+    ===========================================
+
+
+
+    -->
+
+    
+
 
 </body>
 </html>
