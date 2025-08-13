@@ -853,11 +853,177 @@
     Урок 16: CSS переполнение overflow, видимость opacity и visibility, обрезка clip-path
     ===========================================
 
+    Свойство:
 
+    -overflow
+    Определеят поведение контента в случае, если он не помещается в контейнер(hidden - скрывает выпирающую часть, scroll - добавляет возможность проскролить весь контент, auto - добавляет скрол только в случае, если контент действительно больше самого контейнера)
+    Можно задать два параметра для осей x и y
+
+    -opacity
+    Управляет степенью прозрачности элемента, принимает значения от 0 до 1
+    Не ограничивает взаимодействие с элементом
+
+    -visibility
+    Тот же opacity, только со значениями типа visible/hidden
+    Ограничивает взаимодействие с элементом при использовании параметра hidden
+
+    -clip-path
+    Может обрезать элемент по определенной форме
 
     -->
 
-    
+    <section class="example">
+        <header class="list-head">Примеры к 16 уроку</header>
+        <div class="container">
+            <div class="overflow-test">В данном блоке мы будем тестировать свойство overflow, чтобы понять как оно вообще работает</div>
+            <div class="overflow-test cliped">Тут же мы теструем свойства overflow & opacity & clip-path, чтобы понять как оно вообще работает</div>
+            <a href="https://bennettfeely.com/clippy/" class="link" target="_blank">А вот и ССЫЛКА на кастомный clip-path</a>
+        </div>
+    </section>
+
+    <!--
+    ===========================================
+    Урок 17: Свойства взаимодействия в CSS
+    ===========================================
+
+    Свойство:
+
+    -cursor:
+    Позволяет изменять поведение курсора при взаимодействии с определенным элементом
+
+    -user-select:
+    Определяет возможность выделения текста
+
+    -point-events:
+    Регулирует возможность взаимодействия пользователя с элементом, наследуется
+
+    -resize:
+    Добавляет/деактивиррует возможность изменять размеры элемента с нестандартным overflow
+
+    -scroll-behavior:
+    Определяет поведение перемещения по странице(например через якорные ссылки), smooth для более плавного перемещения
+    -->
+
+
+    <div class="griddy">
+        <header class="griddy-head">Все недефолтные виды cursor в CSS</header>
+        <div class="griddy-elem"style="cursor: all-scroll">all-scroll</div>
+        <div class="griddy-elem"style="cursor: alias">alias</div>
+        <div class="griddy-elem"style="cursor: cell">cell</div>
+        <div class="griddy-elem"style="cursor: col-resize">col-resize</div>
+        <div class="griddy-elem"style="cursor: context-menu">context-menu</div>
+        <div class="griddy-elem"style="cursor: copy">copy</div>
+        <div class="griddy-elem"style="cursor: crosshair">crosshair</div>
+        <div class="griddy-elem"style="cursor: grab">grab</div>
+        <div class="griddy-elem"style="cursor: grabbing">grabbing</div>
+        <div class="griddy-elem"style="cursor: help">help</div>
+        <div class="griddy-elem"style="cursor: move">move</div>
+        <div class="griddy-elem"style="cursor: no-drop">no-drop</div>
+        <div class="griddy-elem"style="cursor: not-allowed">not-allowed</div>
+        <div class="griddy-elem"style="cursor: progress">progress</div>
+        <div class="griddy-elem"style="cursor: row-resize">row-resize</div>
+        <div class="griddy-elem"style="cursor: vertical-text">vertical-text</div>
+        <div class="griddy-elem"style="cursor: wait">wait</div>
+        <div class="griddy-elem"style="cursor: zoom-in">zoom-in</div>
+        <div class="griddy-elem"style="cursor: zoom-out">zoom-out</div>
+        <div class="griddy-elem"style="cursor: url(../asset/img/LovelyVSCode.jpg), auto">url</div>
+    </div>
+
+    <!--
+    ===========================================
+    Урок 18: Переходы состояний в CSS
+    ===========================================
+
+    Свойство:
+
+    -translate:
+    Позволяет управлять перемещением элемента как по определенной оси(translateX(Y)), так и по каждой оси через запятую
+
+    -scale:
+    Работает ровно также, как и translate, используется для масштабирования элементов в т.ч существует значение -1, которое разворачивает элемент по заданной вами стороне
+
+    -rotate:
+    Позволяет поворачивать элемент, единицы измерения deg/turn(1turn == 360deg)
+
+    -skew:
+    Искажает элемент по выбранной пользователем оси
+
+    -transform-origin:
+    Дает возможность контролировать выышеперечисленные свойства
+
+    -transition:
+    Включает в себя transition-property(duration,timing-function,delay), регулируя анимации в выбранном пользователем элементе
+
+    -->
+
+    <section class="example">
+        <header class="list-head">Трансформации в CSS</header>
+        <div class="container">
+            <div class="test-box">Lorem ipsum dolor sit amet</div>
+            <div class="test-box transformed">Lorem ipsum dolor sit amet</div>
+        </div>
+    </section>
+
+    <section class="example">
+        <header class="list-head">Анимации через transition</header>
+        <ul class="non-dec">
+            <li class="translated-on-hover">
+                <div class="boxin"></div>
+            </li>
+            <li class="scaled-on-hover">
+                <div class="boxin"></div>
+            </li>
+            <li class="rotated-on-hover">
+                <div class="boxin"></div>
+            </li>
+        </ul>
+    </section>
+
+    <!--
+    ===========================================
+    Урок 19: Анимации в CSS
+    ===========================================
+
+    @keyframes & animation:
+    С помощью @keyframes можно описать анимацию буквально по кадрам, задать трансформацию элемента по мере его перемещения
+    animation позволяет использовать эту анимацию через animation-name, а также дает возможность редактировать анимацию через свойства, ранее изученные в transition (duration, timing-function и т.д)
+
+    Дополнительно:
+
+    -animation-iteration-counnt:
+    Опрделяет кол-во повторений для анимаций
+
+    -animation-direction:
+    Добавляет возможность повторить анимацию в обратном порядке
+
+
+
+    -->
+    <div class="head">Анимации в CSS</div>
+    <div class="line">
+        <div class="label">ease</div>
+        <div class="line-box"></div>
+    </div>
+
+    <div class="line">
+        <div class="label">ease-in</div>
+        <div class="line-box ease-in"></div>
+    </div>
+
+    <div class="line">
+        <div class="label">ease-out</div>
+        <div class="line-box ease-out"></div>
+    </div>
+
+    <div class="line">
+        <div class="label">ease-in-out</div>
+        <div class="line-box ease-in-out"></div>
+    </div>
+
+    <div class="line">
+        <div class="label">linear</div>
+        <div class="line-box linear"></div>
+    </div>
 
 
 </body>
