@@ -620,6 +620,8 @@ section button {
 }
 
 .head {
+    display: flex;
+    justify-content: center;
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 20px;
@@ -636,7 +638,7 @@ section button {
     }
     41% {
         background-color: purple;
-        transform: translateX(1046px);
+        transform: translateX(900%);
     }
     85% {
         background-color: greenyellow;
@@ -654,10 +656,12 @@ section button {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    margin-inline: auto;
     border: 4px solid;
-    margin-inline: 90px;
+    width: 90vw;
     flex-wrap: wrap;
-    height: 70px;
+    height: 90px;
+    animation-name: move-to-right;
 }
 
 .label {
@@ -670,14 +674,13 @@ section button {
 .line-box {
     position: absolute;
     z-index: -100;
-    width: 70px;
+    width: 10%;
     height: 100%;
     background-color: lightseagreen;
     animation-name: move-to-right;
     animation-timing-function: ease;
-    animation-duration: 4s;
+    animation-duration: 5s;
     animation-iteration-count: infinite;
-    animation-duration: alternate;
 }
 
 .ease-in {
@@ -694,4 +697,68 @@ section button {
 
 .linear {
     animation-timing-function: linear;
+}
+
+.adaptive {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    border: 4px solid;
+    width: 500px;
+    flex-flow: column wrap;
+    margin-left: 40px;
+}
+
+.adaptive-box {
+    column-gap: 20px;
+    background-color: lightsalmon;
+    min-width: 150px;
+    max-width: 300px;
+    min-height: 100px;
+    max-height: 170px;
+}
+
+.catalog-new {
+    background-color: #fff;
+}
+
+.catalog-new h1,h2,h2 {
+    color: #000;
+}
+
+.catalog-new-title {
+    font-size: 64px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.catalog-new-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.catalog-new-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightcoral;
+    min-height: 100px;
+    min-width: 200px;
+}
+
+@media (max-width: 700px) {
+    .catalog-new-title {
+        font-size: 36px;
+    }
+    .catalog-new-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .catalog-new-list {
+        grid-template-columns: 1fr;
+    }
 }

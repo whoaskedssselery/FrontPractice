@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0 ">
     <link rel="stylesheet" href="learning.css">
     <link rel="stylesheet" href="normalize.css">
     <title>CSS Learning</title>
@@ -1024,6 +1024,47 @@
         <div class="label">linear</div>
         <div class="line-box linear"></div>
     </div>
+
+    <!--
+    ===========================================
+    Урок 20: Адаптивная верстка в CSS
+    ===========================================
+
+    Свойство:
+
+    -min-max для height и width позволяет заранее определить минимальную и максимальную высоту&ширину для элементов, чтобы определить их поведение при уменьшении размеров экрана
+
+    Медиа-запросы через @media позволяют корректировать размеры элемнета под конкретные значения экрана пользователя. Кроме того, можно также проверить ориентацию экрана через свойство portrait
+
+    -->
+
+    <div class="adaptive">
+        <header class="list-head">Адаптивная коробка</header>
+        <div class="adaptive-box"></div>
+    </div>
+
+    <section class="catalog-new">
+        <h1 class="catalog-new-title">Каталог товаров</h1>
+        <ul class="catalog-new-list">
+            <li class="catalog-new-item">Карточка товара</li>
+            <li class="catalog-new-item">Карточка товара</li>
+            <li class="catalog-new-item">Карточка товара</li>
+            <li class="catalog-new-item">Карточка товара</li>
+        </ul>
+    </section>
+
+    <!--
+    ===========================================
+    Урок 21: CSS свойства — устаревшие и новые
+    ===========================================
+
+    Вендорные префиксы пишутся до основных и используются для определения поведения элемента в конкрентном браузере
+
+    Также можно использовать следующую схему: добавить запасное значение(фоллбек) и прописать нужное свойство через @supports
+
+    -->
+
+
 
 
 </body>
