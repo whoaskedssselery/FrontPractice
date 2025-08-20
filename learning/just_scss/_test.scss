@@ -1,0 +1,41 @@
+@function multi-size($multiplier: 1) {
+     @return #{$multiplier * 8}px;
+}
+
+@mixin black-bordered {
+     border: 3px solid black;
+     background-color: white;
+     color: darkcyan;
+}
+
+@mixin same-sized ($width:100px) {
+     width: $width;
+     aspect-ratio: 1;
+}
+
+.wrapper {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: auto;
+     @include black-bordered;
+     @include same-sized;
+
+     &__phrase {
+          white-space: nowrap;
+          font-size: multi-size(3);
+     }
+}
+
+.grid {
+     --columns: 1;
+
+     display: grid;
+     grid-template-columns: repeat(--columns, 1fr);
+
+     @for $i from 2 to 12 {
+          &--#{$i} {
+               --columns: #{$i};
+          }
+     }
+}
