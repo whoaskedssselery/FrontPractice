@@ -1,30 +1,21 @@
 .container {
-   min-width: calc(var(--container-width) + var(--container-padding-width) * 2);
-   margin-inline: auto; // блок центрируется по горизонтали
-   padding-inline: var(--container-padding-x);
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  padding-inline: var(--container-padding-x);
+  margin-inline: auto;
 }
 
-visually-hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  margin: -1px !important;
-  border: 0 !important;
-  padding: 0 !important;
-  white-space: nowrap !important;
-  clip-path: inset(100%) !important;
-  clip: rect(0 0 0 0) !important;
-  overflow: hidden !important;
+.visually-hidden {
+  @include visually-hidden;
 }
 
 .hidden-mobile {
-   @include mobile {
-      display: none !important;
-   }
+  @include mobile {
+    display: none !important;
+  }
 }
 
 .visible-mobile {
-   @include mobile-above {
-      display: none !important;
-   }
+  @include mobile-above {
+    display: none !important;
+  }
 }
