@@ -70,4 +70,28 @@ console.log(typeof(String(test))); // equals string - произошло ЯВН�
 //  const userAge = +prompt('Сколько тебе лет?') ;
 //  alert(`Тебе - ${userAge} лет`);
 
+// Функции
 
+function logHello() // явное "function", можно использовать до фактического объявления в коде
+{
+   console.log("Hello, Мир!");
+}
+
+logHello();
+
+const helloLog = () => console.log("Привет, World!"); // стрелочная функция, нельзя достать arguments как в явном "function"
+
+helloLog()
+
+const func = (copy) => {
+   if (copy) {
+      return () => console.log(42);
+   }
+
+   return () => console.log(13);
+}
+
+func(false)() // работает так, потому что внутри функции находится еще одна функция
+
+const sthNew = func(true);
+sthNew() // так тоже можно вызвать
