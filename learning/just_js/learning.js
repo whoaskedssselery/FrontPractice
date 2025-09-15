@@ -95,3 +95,223 @@ func(false)() // работает так, потому что внутри фу�
 
 const sthNew = func(true);
 sthNew() // так тоже можно вызвать
+
+// Объекты
+
+// В таком объявлении нет разницы
+const exampleObj = {username: "123"};
+
+const anotherObj = new Object();
+anotherObj.username =  "123";
+
+// Доступ к полям
+console.log(exampleObj.username);
+console.log(anotherObj['username']);
+
+// Удаление
+delete anotherObj['username'];
+console.log(anotherObj);
+
+
+// Присваивание
+const userName = 'Alex'
+const userAge = 28;
+
+const userInfo = {
+   userName,
+   userAge
+}
+console.log(userInfo);
+
+// И такое возможно
+// const propName = prompt('Свойство с каким именем вы хотите добавить в объект');
+// const propValue = prompt(`Какое значение записать в ${propName}?`);
+
+// const obj = {
+//    [propName]: propValue // Работает только с квадратными скобками
+// }
+
+// console.log(obj);
+
+// Проверка на существование поля в объекте
+const anotherExample = {
+   user: 'god',
+   phrase: 'damn',
+}
+
+console.log('damn' in anotherExample);
+
+// Перебор полей через for
+const newUser = {name: 'Алекс', height: 6.2}
+for (const char in newUser) {console.log(char);}
+
+
+// Сортировка в объектах
+const nums = {
+   '2': 'Второй',
+   '1': 'Первый',
+   '3': 'Третий'
+}
+
+for (const count in nums) {
+   console.log(nums[count]); // вывод будет согласно правилу "1, 2, 3", т.к js в первую очередь будет пытаться привести поля в объекте к отсортированному по возрастанию виду, даже конвертируя строки в число при необходимости
+}
+
+// сравнение объектов (Простое сравнение не работает, т.к даже при одинаково пустых объектах они не будут равны, потому что ссылаются на разные ячейки в памяти)
+
+const obj1 = {
+   name: 'Алекс',
+   height: 6.2,
+   nums: {
+      '2': 'Второй',
+      '1': 'Первый',
+      '3': 'Третий'
+   }
+}
+
+const obj2 = {
+   name: 'Алекс',
+   height: 6.2,
+   nums: {
+      '2': 'Второй',
+      '1': 'Первый',
+      '3': 'Третий'
+   }
+
+}
+
+const areTheyEqual = (object1, object2) => {
+   if (Object.keys(object1).length !== Object.keys(object2).length) return 'Ваши объекты -> разные'
+
+   for (const key in object1) {
+      const value1 = object1[key];
+      const value2 = object2[key];
+
+      const areObjects = typeof value1 === 'object' && typeof value2 === 'object' // определяем объекты ли
+
+      if (areObjects) {
+         if (!areTheyEqual(value1, value2)) return 'Ваши объекты -> разные'
+      } else {
+         if (value1 !== value2) return 'Ваши объекты -> разные'
+      }
+   }
+
+   return 'Ваши объекты -> равны'
+}
+
+console.log(areTheyEqual(obj1, obj2));
+
+// Клонирование объектов
+
+// Долгий способ
+const testObj = {
+   test1: 'hard',
+   result1: 'successfully',
+}
+
+const copyObj = new Object()
+
+for (const key in testObj) {
+   copyObj[key] = testObj[key];
+}
+
+console.log(copyObj);
+
+// Простой способ
+const testingObj = {
+   test2: 'medium',
+   result2: 'successfully',
+}
+
+const copyingObj = new Object();
+Object.assign(copyingObj, testingObj);
+console.log(copyingObj);
+
+
+// Еще более простой способ
+const testOnlyObj = {
+   test3: 'easy',
+   result3: 'successfully',
+}
+
+const copyOnlyObj = {...testObj, ...testingObj, ...testOnlyObj}
+console.log(copyOnlyObj);
+
+// Note: Если нужно обратиться к полю, которое теоретически существует внутри объекта, и не получить при этом ошибку, нужно использовать ?. при обращении к полю
+
+// Применение
+const guest1 = {
+   name: 'Василий',
+   age: 30,
+   orderInfo:
+   {
+      roomType: 2,
+      stayDates: {
+         from: '14.04.2024',
+         to: '21.04.2024'
+      }
+   }
+}
+
+const guest2 = {
+   name: 'Екатерина',
+   age: 25
+}
+
+const logGuestInfo = (guest) => {
+   console.log(
+      `Имя: ${guest.name}`,
+      `Возраст: ${guest.age}`,
+      `Дата выезда: ${guest.orderInfo?.stayDates?.to ?? 'Не указана'}` // ?. Захватывает поле до себя и перед собой, Оператор нулевого слияния работает по принципу первого не "null/undefined" значения
+   );
+}
+
+logGuestInfo(guest1)
+logGuestInfo(guest2)
+
+// Деструктуризация объекта
+
+const example = {
+   names: 'Александр',
+   ages: 28,
+   isDevs: true
+}
+
+const {
+   names,
+   ages,
+   isDevs
+} = user;
+
+// Деструктуризация в параметрах функции
+const logAddress = ({city, street, houseNum, apartNum}) => {
+   console.log(
+      `
+      Адрес:
+      г. ${city}, ул. ${street},
+      д. ${houseNum}, кв. ${apartNum}
+      `
+   );
+}
+
+logAddress({
+   city: "Москва",
+   street: "Пушкина",
+   houseNum: "Колотушкина",
+   apartNum: 42
+})
+
+// Деструктуризация с переименованием и значением по умолчанию
+
+const username = {
+   name: 'Алекс'
+}
+
+const admin = {
+   name: 'Босс'
+}
+
+const { name : userNaming = 'Не указано' } = username
+const { name : adminNaming} = admin
+
+console.log(userNaming, adminNaming);
