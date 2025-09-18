@@ -1,0 +1,39 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+
+   &__logo {
+      @include fluid-text(38, 24);
+      text-transform: uppercase;
+   }
+
+   &__menu {
+      @include flex-center;
+
+      column-gap: 50px;
+      list-style: none;
+   }
+
+   &__link {
+      @include reset-link;
+      font-size: 20px;
+      color:  var(--color-dark);
+      text-decoration: none;
+
+      @include hover {
+            &::after { width: 100%;}
+         }
+
+         &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            translate: -50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transition-duration: inherit;
+      }
+   }
+}

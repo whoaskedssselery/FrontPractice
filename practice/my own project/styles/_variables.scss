@@ -1,0 +1,26 @@
+:root {
+     --color-dark: #191A23;
+     --color-light: #FFFFFF;
+     --color-accent: #B9FF66;
+     --color-gray: #F3F3F3;
+     --color-gray-alt: #898989;
+     --color-dark-alt: #292A32;
+
+     --border: 2px solid var(--color-dark);
+     --border-radius: 14px;
+     --border-radius-tiny: 7px;
+     --border-radius-big: 45px;
+
+     --shadow: 0 5px 0 0 var(--color-dark);
+
+     --font-family-base: 'Space Grotesk', sans-serif;
+
+     --container-width: 1720px;
+     --container-padding-x: 100px;
+
+     --section-padding-y: 70px;
+
+     --input-height: 59px;
+
+     --transition-duration: 0.2s;
+}
