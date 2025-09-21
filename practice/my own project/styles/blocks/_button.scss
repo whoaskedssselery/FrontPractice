@@ -1,0 +1,10 @@
+.button {
+   background-color:  var(--color-light);
+   border-radius: var(--border-radius);
+   border: var(--border);
+   cursor: pointer;
+
+   @include hover {
+      background-color: var(--color-accent);
+   }
+}

@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  border: 3px solid black;
+  background-color: white;
+  color: darkcyan;
+  width: 100px;
+  aspect-ratio: 1;
+}
+.wrapper__phrase {
+  white-space: nowrap;
+  font-size: 24px;
+}
+
+.grid {
+  --columns: 1;
+  display: grid;
+  grid-template-columns: repeat(--columns, 1fr);
+}
+.grid--2 {
+  --columns: 2;
+}
+.grid--3 {
+  --columns: 3;
+}
+.grid--4 {
+  --columns: 4;
+}
+.grid--5 {
+  --columns: 5;
+}
+.grid--6 {
+  --columns: 6;
+}
+.grid--7 {
+  --columns: 7;
+}
+.grid--8 {
+  --columns: 8;
+}
+.grid--9 {
+  --columns: 9;
+}
+.grid--10 {
+  --columns: 10;
+}
+.grid--11 {
+  --columns: 11;
+}/*# sourceMappingURL=styles.css.map */
