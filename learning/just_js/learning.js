@@ -143,7 +143,7 @@ console.log('damn' in anotherExample);
 
 // Перебор полей через for
 const newUser = {name: 'Алекс', height: 6.2}
-for (const char in newUser) {console.log(char);}
+for (const char in newUser) {console.log(char);} 
 
 
 // Сортировка в объектах
