@@ -1,10 +1,20 @@
-'use strict'
-
-const product = {
-   id: '123',
-   price: +50,
+const order1 = {
+   customer: "ssselery",
+   details: {
+      item: "controller",
+      date: {
+         day: "28.04.2026"
+      }
+   }
 }
 
-product.totalPrice = 2 * product.price;
+const order2 = {
+   customer: "kilbi"
+}
 
-console.log(product);;
+const processOrder = ({customer, details}) => {
+   console.log(`Клиент: ${customer}` + '\n' + `Дата: ${details?.date?.day ?? "Не указана"} `);
+}
+
+processOrder(order1)
+processOrder(order2)
