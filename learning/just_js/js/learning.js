@@ -126,3 +126,15 @@ while (count <= 5) {
 for (count; count <= 10; count++) {
    console.log("Count is: " + count);
 }
+
+// Цикл do...while
+
+newCount = 0;
+
+do {
+   console.log("New Count is: " + newCount);
+   newCount++;
+} while (newCount <= 5);
+
+// Урок №8: Функции в JavaScript #1/2
+
