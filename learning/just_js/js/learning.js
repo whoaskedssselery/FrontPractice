@@ -74,4 +74,55 @@ const resultOfMath = 1 + -2 - 3 * +'4' / 5 ** 2
 
 console.log(resultOfMath);
 
-// Урок №5: 
+// Урок №5: Условные операторы в JavaScript
+
+const age = 19;
+if (age > 18) console.log("Учи js, скоро на работу!")
+else console.log("Начни раньше учить js, потом будет легче найти работу!")
+
+const sth1 = null;
+const sth2 = 10;
+
+const res1 = sth1 || sth2; // Проверяет на false значение
+const res2 = sth1 ?? sth2; // Проверяет на null или undefined
+
+console.log(res1);
+console.log(res2);
+
+// Урок №6: Взаимодействие с пользователем
+
+// Ввод данных от пользователя
+
+/*
+   !!Код заккомментирован чтобы не мешать при просмотре консоли браузера!!
+   const userName = prompt("Введите ваше имя:", "Имя");
+   alert("Привет, " + userName + "!");
+*/
+
+// Подтверждение действия пользователя
+
+/*
+   !!Код заккомментирован чтобы не мешать при просмотре консоли браузера!!
+   const isAdult = confirm("Вам есть 18 лет?");
+   if (isAdult) {
+      alert("Добро пожаловать на сайт!");
+   } else {
+      alert("Извините, доступ запрещен.");
+   }
+*/
+
+// Урок №7: Циклы в JavaScript
+
+// Цикл while
+
+let count = 0;
+while (count <= 5) {
+   console.log("Count is: " + count);
+   count++;
+}
+
+// Цикл for
+
+for (count; count <= 10; count++) {
+   console.log("Count is: " + count);
+}
