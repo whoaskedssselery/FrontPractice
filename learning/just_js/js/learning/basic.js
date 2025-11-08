@@ -117,7 +117,7 @@ console.log(res2);
 
 let count = 0;
 while (count <= 5) {
-   console.log("Count is: " + count);
+   console.log("Count is: " + count); 
    count++;
 }
 
@@ -135,97 +135,4 @@ do {
    console.log("New Count is: " + newCount);
    newCount++;
 } while (newCount <= 5);
-
-// Урок №8: Функции в JavaScript #1/2
-
-// Способы объявления функции
-
-// Function Declaration
-
-function greet(name) {
-   return "Hello, " + name + "!";
-}
-
-console.log(greet("Alice"));
-
-// Function Expression
-
-const farewell = function(name) {
-   return "Goodbye, " + name + "!";
-};
-
-console.log(farewell("Bob"));
-
-// Arrow Function (лучший способ по моему мнению)
-
-const add = (x, y) => {
-   return x + y;
-}
-
-console.log(add(5, 3));
-
-// Урок №9: Функции в JavaScript #2/2
-
-
-// Пример callback (функция внутри функции)
-const logMessage = (func1, func2) => {
-   func1()
-   console.log("Some logs");
-   func2();
-}
-
-function fn1() {console.log("Stage 1: Complited")}
-function fn2() {console.log("Stage 2: Complited")}
-
-logMessage(fn1, fn2)
-
-// Объекты в JS #1/2
-
-const firstObject = {}; // Создание объекта - первый способ 
-const secondObject = new Object() // Создание объекта - второй способ
-
-const user = { // Пример объекта, созданы две пары "ключ : значение"
-   login: "ssselery",
-   password: "unknown",
-   changeLogin: function(login) { // использование стрелочной функции определяет this не к телу объекту, а ко всему "каркасу" сайта
-      this.login = login
-      console.log("Имя успешно заменено");
-   },
-   'user-greet': function() { // Если ключ содержит пробел или дефис, то его нужно обернуть в кавычки
-      console.log(`Привет, ${this.login}`);
-   }
-}
-
-user.changeLogin("new ssselery");
-user["user-greet"](); // обращаться к ключам с пробелом или дефисом нужно в квадратных скобках
-
-// Object.keys показывает все ключи в объекте в формате массива
-console.log(Object.keys(user));// ['login', 'password', 'changeLogin', 'user-greet']  
-
-user.info = { // добавление ключа к объекту
-   'education-status': "university",
-   it: "front-end"
-}
-
-console.log(Object.keys(user)); // ['login', 'password', 'changeLogin', 'user-greet', 'info']
-
-delete user.info // удаление ключа в объекте
-
-console.log(Object.keys(user)); // ['login', 'password', 'changeLogin', 'user-greet']
-
-const weight = 79
-const aged = 19
-
-// добавление уже существующих ключей
-user.age = age 
-user.weight = weight
-
-console.log(Object.keys(user)); // ['login', 'password', 'changeLogin', 'user-greet', 'age', 'weight']
-
-console.log('isDeveloper' in user); // false
-
-for (const key in user) {
-   console.log(key); // вывод всех ключей объекта
-   console.log(user[key]); // вывод всех значений объекта
-}
 
