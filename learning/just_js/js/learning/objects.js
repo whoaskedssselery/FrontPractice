@@ -21,18 +21,18 @@ user.changeLogin("new ssselery");
 user["user-greet"](); // обращаться к ключам с пробелом или дефисом нужно в квадратных скобках
 
 // Object.keys показывает все ключи в объекте в формате массива
-console.log(Object.keys(user));// ['login', 'password', 'changeLogin', 'user-greet']  
+console.log(Object.keys(user));// {'login', 'password', 'changeLogin', 'user-greet'}  
 
 user.info = { // добавление ключа к объекту
    'education-status': "university",
    it: "front-end"
 }
 
-console.log(Object.keys(user)); // ['login', 'password', 'changeLogin', 'user-greet', 'info']
+console.log(Object.keys(user)); // {'login', 'password', 'changeLogin', 'user-greet', 'info'}
 
 delete user.info // удаление ключа в объекте
 
-console.log(Object.keys(user)); // ['login', 'password', 'changeLogin', 'user-greet']
+console.log(Object.keys(user)); // {'login', 'password', 'changeLogin', 'user-greet'}
 
 const weight = 79
 const aged = 19
@@ -41,7 +41,7 @@ const aged = 19
 user.age = aged
 user.weight = weight
 
-console.log(Object.keys(user)); // ['login', 'password', 'changeLogin', 'user-greet', 'age', 'weight']
+console.log(Object.keys(user)); // {'login', 'password', 'changeLogin', 'user-greet', 'age', 'weight'}
 
 console.log('isDeveloper' in user); // false
 
