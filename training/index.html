@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   <title>Js Pract</title>
+   <title></title>
+   <style>
+   </style>
 </head>
-<body>z
+
+<body>
+   <style>
+      .circle {
+         position: absolute;
+         width: 0;
+         height: 0;
+         border-radius: 50%;
+         background: red;
+         transition: width 2s, height 2s;
+         left: 50%;
+         top: 50%;
+         transform: translate(-50%, -50%);
+      }
+
+      .circle.grow {
+         width: 200px;
+         height: 200px;
+      }
+
+      .message-ball {
+         background: yellow;
+         color: black;
+         padding: 10px;
+         border-radius: 10px;
+         text-align: center;
+         font-weight: bold;
+      }
+
+      #log {
+         margin-top: 20px;
+         font-family: monospace;
+         line-height: 1.5;
+      }
+   </style>
+   
+   <h1></h1>
+   <div id="log"></div>
    <script src="./index.js"></script>
 </body>
+
 </html>
