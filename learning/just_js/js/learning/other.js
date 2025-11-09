@@ -2,7 +2,7 @@
 
 // this в JavaScript
 
-console.log('Глобальный this в javascript:', this); // обращается к Window
+// console.log('Глобальный this в javascript:', this); обращается к Window
 
 const user = {
    name: "Алекс",
@@ -34,7 +34,7 @@ user2.logThis()
 
 let calculator = {
    read(num1,num2) {
-      this.a = num1,
+      this.a = num1
       this.b = num2
    },
    sum() {
@@ -77,9 +77,12 @@ ladder
 
 // Методы примитивов
 
+// Округление
+
 const price = 99.99
 
 // Округлят число до указанного кол-ва знаков после запятой
 const roundedPrice = price.toFixed(0) // 100
 
 console.log("Округленная цена: ", roundedPrice);
+
