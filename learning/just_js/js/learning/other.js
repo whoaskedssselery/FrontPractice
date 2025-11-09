@@ -77,12 +77,27 @@ ladder
 
 // Методы примитивов
 
-// Округление
-
 const price = 99.99
 
 // Округлят число до указанного кол-ва знаков после запятой
 const roundedPrice = price.toFixed(0) // 100
 
 console.log("Округленная цена: ", roundedPrice);
+
+// Приведение к строке
+
+let numToString = (12).toString();
+
+console.log("Числовой тип теперь: ", typeof numToString);
+
+// Математика
+
+console.log(Math.floor(Math.random()*12)); // рандомное число от 0 до 12
+
+console.log(Math.abs(-12)); // 12
+
+// Парсинг int
+
+console.log(parseInt("-14px"));
+
 
