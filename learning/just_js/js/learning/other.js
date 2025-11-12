@@ -92,12 +92,79 @@ console.log("Числовой тип теперь: ", typeof numToString);
 
 // Математика
 
-console.log(Math.floor(Math.random()*12)); // рандомное число от 0 до 12
+console.log("Рандомное число от 0 до 12: ", Math.floor(Math.random()*12));
 
-console.log(Math.abs(-12)); // 12
+console.log("Модуль числа -12: ", Math.abs(-12)); // 12
+
+// Округление
+
+console.log("Округление 4.4 через round: ", Math.round(4.4)); // 4
+console.log("Округление 4.5 через round: ", Math.round(4.5)); // 5
+console.log("Округление -4.6 через round: ", Math.round(-4.6)); // -5
+
+console.log("Округление 4.9 через floor: ", Math.floor(4.9)); // 4
+console.log("Округление 4.1 через floor: ", Math.floor(4.1)); // 4
+console.log("Округление -4.1 через floor: ", Math.floor(-4.1)); // -5
+
+console.log("Округление 4.1 через ceil: ", Math.ceil(4.1)); // 5
+console.log("Округление 4.9 через ceil: ", Math.ceil(4.9)); // 5
+console.log("Округление -4.1 через ceil: ", Math.ceil(-4.1)); // -4
+
+console.log("Округление 4.9 через trunc: ", Math.trunc(4.9)); // 4
+console.log("Округление -4.9 через trunc: ", Math.trunc(-4.9)); // -4
 
 // Парсинг int
 
-console.log(parseInt("-14px"));
+console.log("Парсинг инта в 14px: ", parseInt("-14px")); // 14
 
+// Строки. Методы строк
+
+console.log("Длина строки: ", "someData".length); // 8
+
+const someName = 'Алекс'
+
+console.log(`4-ья буква в Имени ${someName} - ${someName[3]}`)
+console.log(`1-ая c конца буква в Имени ${someName} - ${someName.at(-1)}`)
+
+const someWords = '  гДе-тО таМ!'
+
+console.log(someWords.toLowerCase().trim()) // где-то там!
+// ! trim() может убрать только открытые пробелы в самом начале/конце
+
+console.log(`На ${someWords.toLowerCase().trim().indexOf("!")} позиции находится '!'`);
+console.log(`В предложении есть символ '-'? ${someWords.toLowerCase().includes('-')}`);
+
+const js = 'JavaScript'
+console.log(js.substring(4, 0)) // Java
+console.log(js.slice(-6)) // Script
+console.log(js.repeat(2)); // JavaScriptJavaScript
+
+const message = 'Я изучаю бэкэнд'
+
+console.log(message) // Я изучаю бэкэнд
+console.log(
+	message.replace(
+		/'бэкэнд'/gi, // g заменяет все, i - для любого регистра, или использовать replaceAll
+		'фронтэнд'
+	)); //  Я изучаю фронтэнд
+
+const phoneNumber = '+7 (999) 999-99 99'
+
+console.log(phoneNumber.replace(/\d/g, '#')) // +# (###) ###-##-##
+
+console.log("Последние 4 цифры номера:", phoneNumber.split('-')[1])
+
+// Задача
+
+// const value = prompt('Введите ваше имя: ')
+//
+// const clearValue = value
+// 	.trim()
+// 	.toLowerCase()
+//
+// if (clearValue.length === 0)
+// 	alert('Ошибка: Имя не может быть пустым!')
+//
+// if (clearValue.includes('admin'))
+// 	alert('Ошибка: Ты не админ!')
 
