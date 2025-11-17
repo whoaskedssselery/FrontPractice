@@ -168,3 +168,63 @@ console.log("Последние 4 цифры номера:", phoneNumber.split('
 // if (clearValue.includes('admin'))
 // 	alert('Ошибка: Ты не админ!')
 
+// Map
+
+const data = new Map()
+
+data.set('id', '1')
+data.set(0, '2')
+
+console.log(data.get(0)) // '2'
+console.log(data.get('id')) // '1'
+
+console.log(
+	data.has('id') // true
+)
+
+data.delete(0)
+
+console.log(data.has(0)) // false
+
+data.clear()
+
+console.log(data.size) // 0
+
+const test = new Map()
+
+test.set('name', 'Александр')
+test.set('age', '28')
+
+console.log('keys:', test.keys()) // { name, age }
+console.log('values:', test.values()) // { 'Александр, 28' }
+console.log('entries:', test.entries()) // { 'name' => 'Александр, 'age' => 28 }
+
+// Set
+
+const set = new Set([1, 2, 2, 2, 3, 5, 4, 5])
+
+console.log(set)
+
+set.add(6)
+set.add(7)
+
+console.log(set)
+
+// В остальном set похож на map относительно доступных методов
+
+ // JSON
+
+const someInfo = {
+	sth: 'some info',
+	number: 24
+}
+
+// Преобразования для общения с сервером
+
+const userDataAsString = JSON.stringify(someInfo)
+
+console.log(userDataAsString)
+
+const parsedUserData = JSON.parse(userDataAsString)
+
+console.log(parsedUserData)
