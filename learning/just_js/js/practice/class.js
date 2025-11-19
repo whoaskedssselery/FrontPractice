@@ -66,8 +66,6 @@ const cart = [
 	new Product("Товар 3", 2000),
 ]
 
-let sum = 0
-
 console.log(
 	cart.reduce((sum, item) => sum += item.price, 0)
 )
